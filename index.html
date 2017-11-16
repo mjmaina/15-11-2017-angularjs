@@ -1,0 +1,41 @@
+<html ng-app>
+<head>
+	<title>Angular js</title>
+	<script src="angular.min.js"></script>
+
+</head>
+ <!-- Body tag augmented with ngController directive  -->
+ <body ng-controller="MyController">
+		<div ng-app="trial">
+		  <div>
+		    {{ 'What Next' | greet }}
+		  </div>
+		</div>
+
+
+  		 <!--showing how to usee controller 'spicyController'-->
+		  <div ng-controller="SpicyController">
+			 <button ng-click="chiliSpicy()">Chili</button>
+			 <button ng-click="jalapenoSpicy()">Jalapeño</button>
+			 <p>The food is {{spice}} spicy!</p>
+		</div>
+		<!--end of creating a controller-->
+		<!-- how to use the filter -->
+
+		<div ng-controller="FilterController as ctrl">
+			  <div>
+			    All entries:
+			    <span ng-repeat="entry in ctrl.array">{{entry.name}} </span>
+			  </div>
+			  <div>
+			    Entries that contain an "a":
+			    <span ng-repeat="entry in ctrl.filteredArray">{{entry.name}} </span>
+			  </div>
+		</div>
+<!--end of filtering-->
+
+   <script src="angular.js"></script>
+   <script src="test.js"></script>
+   
+ </body>
+</html>
